@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BT4</title>
+
+    <!-- Bootstrap core CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <style type="text/css">
+    	body {
+		  font-size: .875rem;
+		}
+
+		.feather {
+		  width: 16px;
+		  height: 16px;
+		  vertical-align: text-bottom;
+		}
+
+		/*
+		 * Sidebar
+		 */
+
+		.sidebar {
+		  position: fixed;
+		  top: 0;
+		  bottom: 0;
+		  left: 0;
+		  z-index: 100; /* Behind the navbar */
+		  padding: 0;
+		  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+		}
+
+		.sidebar-sticky {
+		  position: -webkit-sticky;
+		  position: sticky;
+		  top: 48px; /* Height of navbar */
+		  height: calc(100vh - 48px);
+		  padding-top: .5rem;
+		  overflow-x: hidden;
+		  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+		}
+
+		.sidebar .nav-link {
+		  font-weight: 500;
+		  color: #333;
+		}
+
+		.sidebar .nav-link .feather {
+		  margin-right: 4px;
+		  color: #999;
+		}
+
+		.sidebar .nav-link.active {
+		  color: #007bff;
+		}
+
+		.sidebar .nav-link:hover .feather,
+		.sidebar .nav-link.active .feather {
+		  color: inherit;
+		}
+
+		.sidebar-heading {
+		  font-size: .75rem;
+		  text-transform: uppercase;
+		}
+
+		/*
+		 * Navbar
+		 */
+
+		.navbar-brand {
+		  padding-top: .75rem;
+		  padding-bottom: .75rem;
+		  font-size: 1rem;
+		  background-color: rgba(0, 0, 0, .25);
+		  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+		}
+
+		.navbar .form-control {
+		  padding: .75rem 1rem;
+		  border-width: 0;
+		  border-radius: 0;
+		}
+
+		.form-control-dark {
+		  color: #fff;
+		  background-color: rgba(255, 255, 255, .1);
+		  border-color: rgba(255, 255, 255, .1);
+		}
+
+		.form-control-dark:focus {
+		  border-color: transparent;
+		  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+		}
+
+		/*
+		 * Utilities
+		 */
+
+		.border-top { border-top: 1px solid #e5e5e5; }
+		.border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+    </style>
+    <style type="text/css">
+    	.img-profile {
+    		position: relative;
+		    top: 70px;
+		    border-radius: 50%;
+    	}
+    	.bg-with-image {
+    		background-color: var(--secondary);
+    		background-image: url(https://image.freepik.com/free-vector/blurred-background-design_1107-219.jpg);
+		    background-size: cover;
+		    background-position: bottom;
+		    background-repeat: no-repeat;
+    	}
+    	.sidebar .nav-link {
+    		color: #e9ecef;
+    	}
+    </style>
+  </head>
+
+  <body class="bg-light">
+    <!-- <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">CLASS</a>
+      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">Sign out</a>
+        </li>
+      </ul>
+    </nav> -->
+
+    <nav class="navbar navbar-expand-lg sticky-top bg-light p-0">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0 bg-dark text-light p-4" href="#">CLASS</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item m-1">
+            <input class="ml-4" type="text" placeholder="Search" aria-label="Search">
+          </li>
+          
+        </ul>
+        <ul class="navbar-nav px-3">
+        	<li class="nav-item dropdown">
+	            <a class="nav-link dropdown-toggle text-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Martha Smith</a>
+	            <div class="dropdown-menu dropdown-menu-right">
+	              <a class="dropdown-item" href="#">New Task</a>
+	              <a class="dropdown-item" href="#">Preferences</a>
+	              <a class="dropdown-item" href="#">Logout</a>
+	            </div>
+	          </li>
+	        <li class="nav-item text-nowrap">
+	          &nbsp;
+	        </li>
+	      </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-dark sidebar">
+          <div class="sidebar-sticky">
+          	<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Navigation</span>
+            </h6>
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file"></span>
+                  Timetable
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="shopping-cart"></span>
+                  Chat
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="users"></span>
+                  Exams
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="bar-chart-2"></span>
+                  Documents
+                </a>
+              </li>
+            </ul>
+
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Profile Online</span>
+            </h6>
+            <div class="mt-2 mb-2 p-2">
+            	<input class="form-control form-control-dark w-100" type="text" placeholder="New Conversation" aria-label="New Conversation">
+            </div>
+            <!-- <div class="d-flex pl-1">
+            	<img src="http://via.placeholder.com/36" alt="" class="rounded-circle">
+            	<h6>Mark Marquez <small>CEO</small></h6>
+            </div> -->
+            <ul class="nav flex-column mb-2 ml-2">
+              <li class="nav-item d-flex mb-3">
+              	<img src="http://via.placeholder.com/42" alt="" class="rounded-circle mr-2">
+                <a class="nav-link p-0" href="#">
+                  Tony Stark <br><small>CEO</small>
+                </a>
+              </li>
+              <li class="nav-item d-flex mb-3">
+                <img src="http://via.placeholder.com/42" alt="" class="rounded-circle mr-2">
+                <a class="nav-link p-0" href="#">
+                  Peter Parker <br><small>Product Manager</small>
+                </a>
+              </li>
+              <li class="nav-item d-flex mb-3">
+                <img src="http://via.placeholder.com/42" alt="" class="rounded-circle mr-2">
+                <a class="nav-link p-0" href="#">
+                  Tatiana Romanov <br><small>Sales VP</small>
+                </a>
+              </li>
+              <li class="nav-item d-flex mb-3">
+                <img src="http://via.placeholder.com/42" alt="" class="rounded-circle mr-2">
+                <a class="nav-link p-0" href="#">
+                  Bruce Banner <br><small>Finantial VP</small>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 p-0">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-end bg-with-image">
+          	<div class="offset-md-1 col-md-2 ">
+          		<img src="http://via.placeholder.com/150" alt="..." class="img-thumbnail img-profile">
+          	</div>
+          	<div class="col-md-9 d-flex">
+          		<h3 class="text-light">
+          			<span>Martha Smith</span> 
+          		</h3>
+          		<button type="button" class="btn btn-outline-light ml-4 mb-2">Edit Profile</button>
+          	</div>
+          </div>
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center border-bottom bg-white p-4">
+          	<div class="offset-md-3 col-md-9 d-flex pl-0">
+          		<div class="col-md-2 pl-1 border-right">
+          			<h5>MSU 2015 <small class="d-md-block text-muted">University</small></h5>
+          		</div>
+          		<div class="col-md-3 border-right">
+          			<h5>World Politics <small class="d-md-block text-muted">Faculty</small></h5>
+          		</div>
+          		<div class="col-md-2">
+          			<h5>402 <small class="d-md-block text-muted">Group</small></h5>
+          		</div>
+          		<div class="col-md-4">
+          			<button class="btn btn-primary">Send Message</button>
+          		</div>
+          	</div>
+          </div>
+          <div class="d-flex justify-content-start flex-wrap flex-md-nowrap align-items-center pb-3 pt-4">
+          	<div class="offset-md-3 col-md-9 d-flex pl-0">
+          		<div class="col-md-2">
+          			<h4><a href="#" class="text-warning">Schedule</a></h4>
+          		</div>
+          		<div class="col-md-4">
+          			<h4><a href="#" class="text-muted">Contact Information</a></h4>
+          		</div>
+          	</div>
+          </div>
+          <!-- SCHEDULE -->
+          <div class="d-flex justify-content-start flex-wrap flex-md-nowrap pr-5">
+          	<div class="offset-md-1 col-md-2">
+          		<h6>MONDAY <small class="d-md-block text-muted">11/05/2017</small></h6>
+          	</div>
+          	<div class="col-md-9 pl-2">
+          		<ul class="list-group w-100 pb-4">
+				  <li class="list-group-item disabled">Cras justo odio</li>
+				  <li class="list-group-item">Dapibus ac facilisis in</li>
+				</ul>
+          	</div>
+          </div>
+          <div class="d-flex justify-content-start flex-wrap flex-md-nowrap pr-5">
+          	<div class="offset-md-1 col-md-2">
+          		<h6>TUESDAY <small class="d-md-block text-muted">12/05/2017</small></h6>
+          	</div>
+          	<div class="col-md-9 pl-2">
+				<ul class="list-group w-100 pb-4">
+				  <li class="list-group-item disabled">Cras justo odio</li>
+				  <li class="list-group-item">Dapibus ac facilisis in</li>
+				  <li class="list-group-item">Morbi leo risus</li>
+				</ul>
+          	</div>
+          </div>
+          <div class="d-flex justify-content-start flex-wrap flex-md-nowrap pr-5">
+          	<div class="offset-md-1 col-md-2">
+          		<h6>WEDNESDAY <small class="d-md-block text-muted">113/05/2017</small></h6>
+          	</div>
+          	<div class="col-md-9 pl-2">
+          		<ul class="list-group w-100 pb-4">
+				  <li class="list-group-item disabled">Cras justo odio</li>
+				  <li class="list-group-item">Dapibus ac facilisis in</li>
+				</ul>
+          	</div>
+          </div>
+          <!--/ SCHEDULE -->
+        </main>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
+
+    <!-- Graphs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script>
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          datasets: [{
+            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+            lineTension: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#007bff',
+            borderWidth: 4,
+            pointBackgroundColor: '#007bff'
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: false
+              }
+            }]
+          },
+          legend: {
+            display: false,
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
